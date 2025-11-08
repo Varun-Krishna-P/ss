@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: Varun-Krishna-P/ss
+  branch: main
+
+media_folder: "static/media"
+public_folder: "pubic"
+
+# media_library:
+#   name: uploadcare
+
+collections:
+  - name: "media"
+    label: "Media"
+    folder: "static/uploads"
+    create: false
+    editor:
+      preview: false
+    fields:
+      - { label: "Image", name: "image", widget: "image" }
