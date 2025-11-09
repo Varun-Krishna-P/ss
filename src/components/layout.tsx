@@ -18,6 +18,7 @@ const Layout = ({ children }: childrenProps) => {
           </Typography>
           <Button color="inherit" component={Link} to="/">Home</Button>
           <Button color="inherit" component={Link} to="/about">About</Button>
+          <Button color="inherit" component={Link} to="/catalog">Catalog</Button>
           <Button color="inherit" component={Link} to="/contact-us">Contact</Button>
         </Toolbar>
       </AppBar>

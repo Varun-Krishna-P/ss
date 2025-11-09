@@ -1,0 +1,55 @@
+// src/components/CatalogGrid.tsx
+import React from 'react';
+import {Grid, GridProps, Card, CardMedia, CardContent, Typography } from '@mui/material';
+import { graphql, useStaticQuery } from 'gatsby';
+
+
+type CatalogProps = {
+    name: string,
+    short_name: string,
+    image_path: string
+}
+
+const CatalogGrid: React.FC = () => {
+    const data = useStaticQuery(graphql`
+    query {
+      allCatalogYaml {
+        nodes {
+          name
+          short_name
+          image_path
+        }
+      }
+    }
+  `);
+
+  const catalog = data.allCatalogYaml.nodes;
+  const gridProps: GridProps = {}
+
+  return (
+    <Grid container spacing={4} justifyContent="center">
+      {catalog.map((item: CatalogProps) => (
+        <Grid key={item.short_name} size={{xs: 12, sm:6, md:4}}>
+          <Card elevation={3}>
+            <CardMedia
+              component="img"
+              height="180"
+              image={item.image_path}
+              alt={item.name}
+            />
+            <CardContent>
+              <Typography variant="h6" gutterBottom>
+                {item.name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {item.short_name}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
+
+export default CatalogGrid;

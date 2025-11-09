@@ -1,3 +1,4 @@
+local_backend: true
 backend:
   name: github
   repo: Varun-Krishna-P/ss
@@ -23,11 +24,29 @@ collections:
           - { label: "Website", name: "website", widget: "string" }
 
     create: true    
-  - name: "media"
-    label: "Media"
-    folder: "static/uploads"
-    create: false
+  - name: "image"
+    label: "Image"
+    extension: "yml"
+    folder: "static/uploads/images"
+    media_folder: "/static/media/images"
+    public_folder: "/media/images"
+    create: true
+    slug: "{{fields.title}}"
     editor:
       preview: false
     fields:
+      - { label: "Title", name: "title", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
+  - name: "Catalog"
+    label: "Catalog"
+    folder: "/src/data/catalog"
+    extension: "yml"
+    format: "yml"
+    create: true
+    slug: "{{fields.short_name}}"
+    identifier_field: short_name
+    summary: "{{fields.name}} ({{fields.short_name}})"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Short Name", name: "short_name", widget: "string" }
+      - { label: "Image Path", name: "image_path", widget: "string" }

@@ -1,0 +1,35 @@
+Step-by-Step Fix
+1. Ensure local_backend: true is set correctly
+In your config.yml, it should be at the top level:
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+
+This tells Netlify CMS to use the local proxy server instead of GitHub directly.
+
+2. Start the local proxy server
+You must run the Netlify CMS proxy server locally for local_backend to work:
+npx netlify-cms-proxy-server
+
+
+This starts a local server at http://localhost:8081 that Netlify CMS will use to read/write files.
+
+3. Ensure your site is served locally
+Run your dev server (e.g., Gatsby):
+npm run develop
+
+
+Then visit:
+http://localhost:8000/admin
+
+
+Netlify CMS will now use the proxy server instead of GitHub.
+
+4. Check your browser console
+If you still see GitHub API calls, it means:
+- local_backend: true is not being picked up
+- Or the proxy server isn’t running
+Make sure both are active and that your config.yml is being loaded correctly.
