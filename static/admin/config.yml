@@ -27,9 +27,9 @@ collections:
               - { label: "Tagline", name: "tagline", widget: "string" }
   - name: "Contact Us"
     label: "Contact us"
-    files: 
+    files:
       - label: "Contact"
-        name: "Contact" 
+        name: "Contact"
         file: "src/data/contact/contact.yml"
         extension: "yml"
         fields:
@@ -38,7 +38,7 @@ collections:
           - { label: "Address", name: "address", widget: "text" }
           - { label: "Website", name: "website", widget: "string" }
 
-    create: true    
+    create: true
   - name: "image"
     label: "Image"
     extension: "yml"
@@ -64,4 +64,11 @@ collections:
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Short Name", name: "short_name", widget: "string" }
-      - { label: "Image Path", name: "image_path", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - {
+          label: "Upload Image",
+          name: "image_path",
+          widget: "image",
+          media_folder: "/static/media/images",
+          public_folder: "/media/images",
+        }

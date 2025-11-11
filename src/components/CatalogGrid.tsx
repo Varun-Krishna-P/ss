@@ -1,13 +1,14 @@
 // src/components/CatalogGrid.tsx
 import React from 'react';
-import {Grid, GridProps, Card, CardMedia, CardContent, Typography } from '@mui/material';
+import {Grid, GridProps, Card, CardMedia, CardContent, Typography, Chip } from '@mui/material';
 import { graphql, useStaticQuery } from 'gatsby';
 
 
 type CatalogProps = {
     name: string,
     short_name: string,
-    image_path: string
+    image_path: string,
+    description: string,
 }
 
 const CatalogGrid: React.FC = () => {
@@ -18,6 +19,7 @@ const CatalogGrid: React.FC = () => {
           name
           short_name
           image_path
+          description
         }
       }
     }
@@ -34,16 +36,20 @@ const CatalogGrid: React.FC = () => {
             <CardMedia
               component="img"
               height="180"
+              width="220"
               image={item.image_path}
               alt={item.name}
-              sx={{objectFit: "fill"}}
+              sx={{objectFit: "contain", maxHeight: "100%", maxWidth: "100%"}}
             />
             <CardContent>
               <Typography variant="h6" gutterBottom>
                 {item.name}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {item.short_name}
+                <Chip label={item.short_name} color="primary" variant="outlined" />
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={{marginTop: 1}}>
+                {item.description ?? <br/>}
               </Typography>
             </CardContent>
           </Card>
