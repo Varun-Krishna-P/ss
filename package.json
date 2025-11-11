@@ -7,7 +7,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "node generate-headers.js && gatsby develop",
+    "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
