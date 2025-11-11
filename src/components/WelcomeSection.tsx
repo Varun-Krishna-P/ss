@@ -1,7 +1,10 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
+import { useAppConfig } from '../hooks/useAppConfig';
 
 function WelcomeSection() {
+  const { site_name, tagline } = useAppConfig();
+  
   return (
     <Box
       sx={{
@@ -21,7 +24,7 @@ function WelcomeSection() {
           mb: 1,
         }}
       >
-        Welcome to My Website
+        Welcome to {site_name}
       </Typography>
 
       <Typography
@@ -34,7 +37,7 @@ function WelcomeSection() {
           mb: 3,
         }}
       >
-        — Where Ancient Wisdom Meets Modern Well-being.
+        — {tagline}
       </Typography>
 
       <Typography

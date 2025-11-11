@@ -19,6 +19,20 @@ const config: GatsbyConfig = {
       path: `${__dirname}/src/data/catalog`,
     },
   },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `app_config`,
+      path: `${__dirname}/src/data/app_config`,
+    },
+  },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `contact`,
+      path: `${__dirname}/src/data/contact`,
+    },
+  },
   ]
 };
 

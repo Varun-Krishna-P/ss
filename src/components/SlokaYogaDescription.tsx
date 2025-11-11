@@ -1,7 +1,9 @@
 import { Box, List, ListItem, Typography } from '@mui/material';
 import React from 'react';
+import { useAppConfig } from '../hooks/useAppConfig';
 
 function SlokaYogaDescription() {
+  const {site_name} = useAppConfig();
   return (
     <Box sx={{ p: 2 }}>
       <List sx={{ listStyleType: 'none', paddingLeft: 0 }}>
@@ -10,7 +12,7 @@ function SlokaYogaDescription() {
           <Typography variant="h6" component="div">✨ <strong>Our Essence</strong></Typography>
           <List sx={{ pl: 3 }}>
             <ListItem sx={{ display: 'list-item' }}>
-              At <strong>[Your Website Name]</strong>, we believe that true wellness begins with balance — of breath, sound, and movement.
+              At <strong>{site_name}</strong>, we believe that true wellness begins with balance — of breath, sound, and movement.
             </ListItem>
             <ListItem sx={{ display: 'list-item' }}>
               Through the power of mantra (sound) and the discipline of yoga (body and breath), we guide you on a transformative journey toward inner peace, clarity, and strength.

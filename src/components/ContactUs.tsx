@@ -1,12 +1,12 @@
 import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableRow, Paper } from '@mui/material';
 import React from 'react';
-
-import contact from "../data/contact.yml";
-
+import { useContactConfig } from '../hooks/useContactConfig';
 
 
-console.log(contact)
+
+
 function ContactUs() {
+  const {email, address} = useContactConfig();
   return (
     <Box
       sx={{
@@ -77,7 +77,7 @@ function ContactUs() {
               >
                 📧 Email
               </TableCell>
-              <TableCell>info@yourwebsite.com</TableCell>
+              <TableCell>{email}</TableCell>
             </TableRow>
 
             <TableRow>
@@ -91,7 +91,7 @@ function ContactUs() {
                 📍 Address
               </TableCell>
               <TableCell>
-                123 Serenity Lane, Wellness City,<br /> Bengaluru, Karnataka — 560001
+                {address}
               </TableCell>
             </TableRow>
 

@@ -11,12 +11,27 @@ public_folder: "public"
 #   name: uploadcare
 
 collections:
+  - name: "app_config"
+    label: "App Configuration"
+    files:
+      - label: "App Config"
+        name: "app_config"
+        file: "src/data/app_config/app_config.yml"
+        extension: "yml"
+        fields:
+          - name: "app_config"
+            label: "App Config"
+            widget: "object"
+            fields:
+              - { label: "Site Name", name: "site_name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
   - name: "Contact Us"
     label: "Contact us"
     files: 
       - label: "Contact"
         name: "Contact" 
-        file: "src/components/ContactUs.tsx"
+        file: "src/data/contact/contact.yml"
+        extension: "yml"
         fields:
           - { label: "Phone", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }

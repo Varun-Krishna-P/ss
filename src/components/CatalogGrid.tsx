@@ -36,6 +36,7 @@ const CatalogGrid: React.FC = () => {
               height="180"
               image={item.image_path}
               alt={item.name}
+              sx={{objectFit: "fill"}}
             />
             <CardContent>
               <Typography variant="h6" gutterBottom>
