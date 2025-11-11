@@ -72,3 +72,14 @@ collections:
           media_folder: "/static/media/images",
           public_folder: "/media/images",
         }
+  - name: "Payment"
+    label: "Payment"
+    files:
+      - label: "Payment Config"
+        name: "payment_config"
+        file: "src/data/payment/payment.yaml"
+        extension: "yaml"
+        fields:
+          - { label: "Per Class Fee", name: "perClass", widget: "number" }
+          - { label: "Ten Class Fee", name: "tenClass", widget: "number" }
+          - { label: "Per Month Fee", name: "perMonth", widget: "number" }

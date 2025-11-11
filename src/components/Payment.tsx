@@ -1,12 +1,9 @@
 import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableRow, Paper } from '@mui/material';
 import React from 'react';
-import { useContactConfig } from '../hooks/useContactConfig';
+import { usePaymentConfig } from '../hooks/usePaymentConfig';
 
-
-
-
-function ContactUs() {
-  const {email, address} = useContactConfig();
+function Payment() {
+  const {perClass, tenClass, perMonth} = usePaymentConfig();
   return (
     <Box
       sx={{
@@ -27,7 +24,7 @@ function ContactUs() {
           mb: 2,
         }}
       >
-        Contact Us
+        Payment Information
       </Typography>
 
       <Typography
@@ -38,8 +35,7 @@ function ContactUs() {
           mb: 4,
         }}
       >
-        — We’d love to hear from you. Whether you have questions about our Sloka and Yoga programs, 
-        or just want to say hello, we’re here to help.
+        — Fee structure for our classes!
       </Typography>
 
       {/* Contact Table */}
@@ -61,11 +57,11 @@ function ContactUs() {
                   color: 'primary.contrastText',
                 }}
               >
-                📧 Email
+                Per Class Fee
               </TableCell>
-              <TableCell>{email}</TableCell>
+              <TableCell>{perClass}</TableCell>
             </TableRow>
-
+           
             <TableRow>
               <TableCell
                 sx={{
@@ -74,25 +70,26 @@ function ContactUs() {
                   color: 'primary.contrastText',
                 }}
               >
-                📍 Address
+                Per ten Class Fee
+              </TableCell>
+              <TableCell>{tenClass}</TableCell>
+            </TableRow>
+            
+            <TableRow>
+              <TableCell
+                sx={{
+                  fontWeight: 'bold',
+                  bgcolor: 'primary.light',
+                  color: 'primary.contrastText',
+                }}
+              >
+                Per Month Fee
               </TableCell>
               <TableCell>
-                {address}
+                {perMonth}
               </TableCell>
             </TableRow>
 
-            <TableRow>
-              <TableCell
-                sx={{
-                  fontWeight: 'bold',
-                  bgcolor: 'primary.light',
-                  color: 'primary.contrastText',
-                }}
-              >
-                🌐 Website
-              </TableCell>
-              <TableCell>www.yourwebsite.com</TableCell>
-            </TableRow>
           </TableBody>
         </Table>
       </TableContainer>
@@ -100,4 +97,4 @@ function ContactUs() {
   );
 }
 
-export default ContactUs;
+export default Payment;

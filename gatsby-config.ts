@@ -33,6 +33,13 @@ const config: GatsbyConfig = {
       path: `${__dirname}/src/data/contact`,
     },
   },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `payment`,
+      path: `${__dirname}/src/data/payment`,
+    },
+  },
   ]
 };
 

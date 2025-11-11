@@ -15,12 +15,11 @@ const Layout = ({ children }: childrenProps) => {
     <ThemeProvider theme={theme}>
       <AppBar position="static" sx={{backgroundColor: theme.palette.primary[900]}}>
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" sx={{ flexGrow: 1 }} component={Link} to="/" style={{ textDecoration: 'none', color: 'inherit' }}  >
             {site_name}
           </Typography>
-          <Button color="inherit" component={Link} to="/">Home</Button>
-          <Button color="inherit" component={Link} to="/about">About</Button>
           <Button color="inherit" component={Link} to="/catalog">Catalog</Button>
+          <Button color="inherit" component={Link} to="/payment">Payment</Button>
           <Button color="inherit" component={Link} to="/contact-us">Contact</Button>
         </Toolbar>
       </AppBar>
