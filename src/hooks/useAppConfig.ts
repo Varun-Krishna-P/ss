@@ -14,7 +14,6 @@ export const useAppConfig = () => {
     }
   `);
 
-  console.log("hello", data.allAppConfigYaml);
   
   return data.allAppConfigYaml.nodes[0].app_config;
 };

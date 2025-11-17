@@ -72,6 +72,9 @@ collections:
           media_folder: "/static/media/images",
           public_folder: "/media/images",
         }
+      - { label: "Benefits", name: "benefits", widget: "markdown", required: false }
+      - { label: "Price Details", name: "price", widget: "string", required: false }
+      - { label: "Archive Course", name: "is_archived", widget: "boolean", default: false, required: false }
   - name: "Payment"
     label: "Payment"
     files:

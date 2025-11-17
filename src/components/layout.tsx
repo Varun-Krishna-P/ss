@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Container, Button, ThemeProvider } from '@mui/material';
+import { AppBar, Toolbar, Typography, Container, Button, ThemeProvider, CssBaseline } from '@mui/material';
 import { Link } from 'gatsby';
 import theme from '../constants/theme';
 import { useAppConfig } from '../hooks/useAppConfig';
@@ -13,6 +13,7 @@ const Layout = ({ children }: childrenProps) => {
   return (
     <>
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <AppBar position="static" sx={{backgroundColor: theme.palette.primary[900]}}>
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }} component={Link} to="/" style={{ textDecoration: 'none', color: 'inherit' }}  >

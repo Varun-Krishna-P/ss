@@ -1,33 +1,20 @@
 // src/components/CatalogGrid.tsx
-import React from 'react';
-import {Grid, GridProps, Card, CardMedia, CardContent, Typography, Chip } from '@mui/material';
-import { graphql, useStaticQuery } from 'gatsby';
-
-
-type CatalogProps = {
-    name: string,
-    short_name: string,
-    image_path: string,
-    description: string,
-}
+import React, { useState } from 'react';
+import {Grid, GridProps, Card, CardMedia, CardContent, Typography, Chip, Box, Button } from '@mui/material';
+import { useCatalogConfig } from '../hooks/useCatalogConfig';
+import PriceDetailsDialog from './PriceDetailsDialog';
+import { CatalogProps } from '../types/Catalog';
 
 const CatalogGrid: React.FC = () => {
-    const data = useStaticQuery(graphql`
-    query {
-      allCatalogYaml {
-        nodes {
-          name
-          short_name
-          image_path
-          description
-        }
-      }
-    }
-  `);
+  const catalog = useCatalogConfig()
+  const [open, setOpen] = useState(false)
+  const [catalotItem, setCatalogItem] = useState<CatalogProps | null>(null)
 
-  const catalog = data.allCatalogYaml.nodes;
-  const gridProps: GridProps = {}
-
+  const handleOpen = (item: CatalogProps) => {
+    setOpen(true)
+    setCatalogItem(item)
+  }
+  const handleClose = () => setOpen(false)
   return (
     <Grid container spacing={4} justifyContent="center">
       {catalog.map((item: CatalogProps) => (
@@ -45,12 +32,16 @@ const CatalogGrid: React.FC = () => {
               <Typography variant="h6" gutterBottom>
                 {item.name}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Box>
                 <Chip label={item.short_name} color="primary" variant="outlined" />
-              </Typography>
+              </Box>
               <Typography variant="body2" color="text.secondary" sx={{marginTop: 1}}>
                 {item.description ?? <br/>}
               </Typography>
+              <Box sx={{mt: "2%"}}>
+                <Button variant="contained" onClick={() => handleOpen(item)}>View Details</Button>
+              </Box>
+              {open && <PriceDetailsDialog open={open} onClose={handleClose} catalog={catalotItem} />}
             </CardContent>
           </Card>
         </Grid>

@@ -15,12 +15,7 @@ const CatalogPage: React.FC<PageProps> = () => {
       </Box>
       <Box sx={{mb: 4}}>
         <Typography variant="body1" sx={{color: 'text.secondary'}}>
-          Explore our diverse catalog of offerings, thoughtfully curated to enrich your journey.  This is just a sample catalot. Whatever you name it we have it.
-        </Typography>
-      </Box>
-      <Box sx={{mt: 4}}>
-        <Typography variant="h6" component="h6" sx={{fontWeight: 'bold', mb: 2, color:"primary.main"}} >
-          More coming soon...
+          Explore our diverse catalog of offerings, thoughtfully curated to enrich your journey.
         </Typography>
       </Box>
       <CatalogGrid />

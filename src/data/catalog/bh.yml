@@ -1,3 +1,6 @@
-name: Bhagavat Gita
-short_name: BH
-image_path: /media/images/gita_upadesam.png
+name: Bhajans
+short_name: Bh
+description: Bhajans of various gods
+image_path: /media/images/bhajan.png
+price: 6 class -  ₹ 1400
+is_archived: false
