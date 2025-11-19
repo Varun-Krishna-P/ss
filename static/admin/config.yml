@@ -1,8 +1,11 @@
 local_backend: true
 backend:
-  name: github
+  # name: github
+  name: git-gateway
   repo: Varun-Krishna-P/ss
   branch: main
+  identity_url: https://gurupaduka.netlify.app/.netlify/identity
+  site_url: "https://gurupaduka.netlify.app"  # Your deployed site URL
 
 media_folder: "static/media"
 public_folder: "public"
