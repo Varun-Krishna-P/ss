@@ -1,4 +1,4 @@
-# src/data/app_config.yml
 app_config:
-  site_name: "Guru Paduka"
-  tagline: "Where Ancient Wisdom Meets Modern Well-being." # or whatever data you have
+  site_name: Guru Paduka
+  tagline: Where Ancient Wisdom Meets Modern Well-being.
+  logo_path: /media/images/paduka.png

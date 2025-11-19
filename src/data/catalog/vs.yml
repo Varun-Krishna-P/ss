@@ -1,7 +1,9 @@
 name: Vishnu Sahasaranamam
 short_name: VS
+display_order: 1
 description: Vishnu Sahasaranamam
 image_path: /media/images/narayana.png
+price: 6 class -  ₹ 1400
 duration_weeks: null
 benefits: >-
   <!--StartFragment-->
@@ -14,9 +16,8 @@ benefits: >-
   * **Material Prosperity**: It is also associated with attracting prosperity and success in life, as Lord Vishnu is the custodian of wealth and well-being.
 
 
-  **B﻿est time to chant:**  preferably in the morning
+  **B﻿est time:**  preferably in the morning
 
 
   <!--EndFragment-->
-price: 6 class -  ₹ 1400
 is_archived: false

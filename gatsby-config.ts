@@ -40,6 +40,18 @@ const config: GatsbyConfig = {
       path: `${__dirname}/src/data/payment`,
     },
   },
+  {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `guru paduka`,
+        short_name: `guru paduka`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+        icon: `src/images/icon.png`, // <- your favicon here
+      },
+    },
   ]
 };
 

@@ -7,7 +7,8 @@ export const useAppConfig = () => {
         nodes {
           app_config {
             site_name,
-            tagline
+            tagline,
+            logo_path
           }
         }            
       }

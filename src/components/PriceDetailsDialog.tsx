@@ -16,12 +16,18 @@ import {
 } from "@mui/material";
 import React from "react";
 import { CatalogProps } from "../types/Catalog";
+import { marked } from "marked";
 
 type PriceDetailsDialogProps = {
   open: boolean;
   onClose: () => void;
   catalog: CatalogProps | null;
 };
+
+function parseMarkdown(content?: string): string {
+  const htmlContent = (content ?? '').replace(/<!--.*?-->/g, '')
+  return marked.parse(htmlContent) as string;
+}
 
 const PriceDetailsDialog: React.FC<PriceDetailsDialogProps> = ({
   open,
@@ -31,7 +37,7 @@ const PriceDetailsDialog: React.FC<PriceDetailsDialogProps> = ({
   return (
     <Dialog open={open} onClose={onClose} hideBackdrop>
       <DialogTitle>
-        Price Details for: <Typography variant="h6">{catalog?.name}</Typography>
+        Price Details for: <Typography variant="h6" component="span">{catalog?.name}</Typography>
       </DialogTitle>
       <DialogContent>
         <TableContainer
@@ -73,7 +79,7 @@ const PriceDetailsDialog: React.FC<PriceDetailsDialogProps> = ({
                 </TableCell>
                 <TableCell>
                  <Box>
-                    {catalog?.benefits ?? "No benefits details available."}
+                  <div dangerouslySetInnerHTML={{ __html: parseMarkdown(catalog?.benefits) ?? "No benefits details available." }} />
                   </Box>
                 </TableCell>
               </TableRow>

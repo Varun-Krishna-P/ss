@@ -10,7 +10,7 @@ const CatalogPage: React.FC<PageProps> = () => {
     <Layout>
       <Box>
         <Typography variant="h3" component="h1" sx={{fontWeight: 'bold', mb: 4, color:"primary.main"}} >
-          Catalog
+          Slokam
         </Typography>
       </Box>
       <Box sx={{mb: 4}}>

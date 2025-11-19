@@ -3,13 +3,16 @@ import { graphql, useStaticQuery } from "gatsby";
 export const useCatalogConfig = () => {
   const data = useStaticQuery(graphql`
     query {
-      allCatalogYaml {
+      allCatalogYaml(sort: {fields: display_order, order: ASC}, filter: {is_archived: {eq: false}}) {
         nodes {
             name,
             short_name,
             image_path,
+            display_order,
             description,
-            price
+            benefits,
+            price,
+            is_archived
         }            
       }
     }

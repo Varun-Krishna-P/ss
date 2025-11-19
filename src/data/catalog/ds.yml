@@ -1,5 +1,6 @@
 name: Desika Stotram
 short_name: DS
+display_order: 10
 description: Desika Stotram by Swami Vedanta Desikan
 image_path: /media/images/desigan.jpg
 price: 6 class -  ₹ 1400

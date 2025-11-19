@@ -25,6 +25,9 @@ collections:
             fields:
               - { label: "Site Name", name: "site_name", widget: "string" }
               - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Logo", name: "logo_path", widget: "image", 
+                  media_folder: "/static/media/images", public_folder: "/media/images" 
+                }
   - name: "Contact Us"
     label: "Contact us"
     files:
@@ -64,6 +67,7 @@ collections:
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Short Name", name: "short_name", widget: "string" }
+      - { label: "Display Order", name: "display_order", widget: "number", required: false}
       - { label: "Description", name: "description", widget: "text", required: false }
       - {
           label: "Upload Image",

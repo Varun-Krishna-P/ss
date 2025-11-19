@@ -1,10 +1,9 @@
 name: Adithya Hrudayam
 short_name: AH
+display_order: 3
+description: Adithya hrudayam
 image_path: /media/images/surya.png
 benefits: >-
-  <!--StartFragment-->
-
-
   \
 
   Chanting this hymn regularly unlocks blessings on **three planes**—**physical, mental, and spiritual**. Here’s how:
@@ -44,10 +43,5 @@ benefits: >-
 
 
   Chant at **sunrise**, facing east, when Surya’s energy is strongest.
-
-
-
-
-  <!--EndFragment-->
 price: 6 class -  ₹ 1400
 is_archived: false
