@@ -3,7 +3,11 @@ import { pink, teal } from "@mui/material/colors";
 
 declare module '@mui/material/styles' {
   interface PaletteColor {
+    600: string;
+    700: string;
+    800: string;
     900?: string;
+
   }
 }
 
