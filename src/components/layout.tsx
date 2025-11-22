@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Container, Button, ThemeProvider, CssBaseline } from '@mui/material';
 import { Link } from 'gatsby';
 import theme from '../constants/theme';
 import { useAppConfig } from '../hooks/useAppConfig';
 import Footer from './Footer';
+import { Send } from '@mui/icons-material';
+import SendEmailButton from './SendEmailButton';
 
 type childrenProps = {
   children?: React.ReactNode;
@@ -12,6 +14,10 @@ type childrenProps = {
 const Layout = ({ children }: childrenProps) => {
   const {site_name, logo_path} = useAppConfig();
   const FOOTER_HEIGHT = 70;
+  const [open, setOpen] = useState<boolean>(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
     <ThemeProvider theme={theme}>
@@ -36,6 +42,7 @@ const Layout = ({ children }: childrenProps) => {
           <main style={{ flex: 1 }}>{children}</main>          
         </div>
       </Container>
+      <SendEmailButton onOpen={() => handleOpen()} onClose={() => handleClose()} open={open} />
       <Footer />
       </ThemeProvider>
     </>
