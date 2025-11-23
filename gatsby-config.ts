@@ -64,7 +64,6 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-sitemap`,
 
       options: {
-        output: `/sitemap.xml`,
         excludes: [`/admin/*`, `/dev-404-page`, `/404`, `/404.html`],
         query: `
         {
