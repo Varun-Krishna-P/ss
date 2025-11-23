@@ -9,7 +9,7 @@ export async function handler(event, context) {
     });
 
     await client.send({
-      from: { email: `${body.from_email} || "no-reply@vedavid.com"` },
+      from: { email: body.app_email || "no-reply@vedavid.com", name: body.site_name || "VedaVid" },
       to: [{ email: body.email, name: body.name }],
       subject: body.subject || "New Request",
       text: `

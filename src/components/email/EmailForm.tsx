@@ -11,19 +11,23 @@ import React, { useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import { useContactConfig } from "../../hooks/useContactConfig";
 import { useAppConfig } from "../../hooks/useAppConfig";
+import AppAlert from "../AppAlert";
+import AlertDataProps from "../../constants/AlertProps";
 type EmailFieldProps = {
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
 };
 
 const EmailForm = ({
   onClose,
   open,
+  handleData
 }: {
   onClose: () => void;
   open: boolean;
+  handleData: (data: AlertDataProps) => void;
 }) => {
   const [form, setForm] = useState<EmailFieldProps>({
     name: "",
@@ -39,8 +43,8 @@ const EmailForm = ({
     message: "",
   });
 
-  const { email: from_email } = useContactConfig();
-  const { site_name} = useAppConfig()
+  const { email: from_email, app_email } = useContactConfig();
+  const { site_name } = useAppConfig();
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -52,17 +56,17 @@ const EmailForm = ({
 
   const validate = () => {
     const newErrors: EmailFieldProps = {
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
     };
 
     if (!form.name.trim()) newErrors.name = "Name is required.";
     if (!form.phone.trim()) {
-        newErrors.phone = "Phone is required.";
+      newErrors.phone = "Phone is required.";
     } else if (!/^\+?[0-9\s\-()]{7,}$/.test(form.phone)) {
-        newErrors.phone = "Enter a valid phone number.";
+      newErrors.phone = "Enter a valid phone number.";
     }
     if (!form.email.trim()) newErrors.email = "Email is required.";
     else if (!/\S+@\S+\.\S+/.test(form.email))
@@ -71,7 +75,7 @@ const EmailForm = ({
 
     setErrors(newErrors);
     // return Object.keys(newErrors).length === 0;
-     return !Object.values(newErrors).some((msg) => msg !== "");
+    return !Object.values(newErrors).some((msg) => msg !== "");
   };
 
   const handleSubmit = async () => {
@@ -79,23 +83,24 @@ const EmailForm = ({
     if (!validate()) return;
     // send email logic here
     const mailBodyContent = {
-        name: form.name,
-        email: form.email,
-        phone: form.phone,
-        message: form.message,
-        subject: `New Request from ${form.name}`,
-        from_email: from_email,
-        site_name: site_name
-    }
-    console.log("Sending email with content:", mailBodyContent);
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      message: form.message,
+      subject: `New Request from ${form.name}`,
+      from_email,
+      site_name,
+      app_email,
+    };
     const response = await fetch("/.netlify/functions/send-email", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(mailBodyContent),
-  });
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(mailBodyContent),
+    });
 
-  const data = await response.json();
-  console.log("Email sent:", data);
+    const data = await response.json();
+    handleData(data);
+    console.log("Email sent:", data);
     onClose();
   };
   return (

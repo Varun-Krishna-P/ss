@@ -6,7 +6,8 @@ export const useContactConfig = () => {
       allContactYaml {
           nodes {        
             email,
-            address
+            address,
+            app_email,
         }
       }
     }

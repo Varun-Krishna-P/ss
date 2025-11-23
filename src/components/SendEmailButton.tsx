@@ -1,15 +1,20 @@
 import { Email } from "@mui/icons-material";
 import { Box, Button } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import EmailForm from "./email/EmailForm";
 import theme from "../constants/theme";
+import AppAlert from "./AppAlert";
+import AlertDataProps from "../constants/AlertProps";
 
 type SendEmailProps = {
   onOpen: () => void;
   onClose: () => void;
   open?: boolean;
 };
+
 const SendEmailButton = ({ onOpen, onClose, open }: SendEmailProps) => {
+  const [data, setData] = useState<AlertDataProps | null>(null);
+  const handleData = (alertData: AlertDataProps) => setData(alertData);
   return (
     <>
       <Box>
@@ -36,7 +41,26 @@ const SendEmailButton = ({ onOpen, onClose, open }: SendEmailProps) => {
           Email
         </Button>
       </Box>
-      <Box>{open && <EmailForm onClose={onClose} open={open} />}</Box>
+      <Box>{open && <EmailForm onClose={onClose} open={open} handleData={handleData} />}</Box>
+      <Box>
+        {
+      data && data.success && (
+        <AppAlert
+          message="Email sent successfully! We will reach you shortly!"
+          severity="success"
+        />
+      )
+    }
+    {
+      data && data.error && (
+        <AppAlert
+          message={`Failed to send email. Please try again later. ${data.error}`}
+          severity="error"
+        />
+      )
+    }
+        
+      </Box>
     </>
   );
 };
