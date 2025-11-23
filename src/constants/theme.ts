@@ -7,6 +7,7 @@ declare module '@mui/material/styles' {
     700: string;
     800: string;
     900?: string;
+    500: string;
 
   }
 }

@@ -8,7 +8,9 @@ export const useAppConfig = () => {
           app_config {
             site_name,
             tagline,
-            logo_path
+            logo_path,
+            sanskrit_slokam,
+            yoga_slokam,
           }
         }            
       }

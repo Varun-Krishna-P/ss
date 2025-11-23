@@ -26,8 +26,24 @@ collections:
             fields:
               - { label: "Site Name", name: "site_name", widget: "string" }
               - { label: "Tagline", name: "tagline", widget: "string" }
-              - { label: "Logo", name: "logo_path", widget: "image", 
-                  media_folder: "/static/media/images", public_folder: "/media/images" 
+              - {
+                  label: "Logo",
+                  name: "logo_path",
+                  widget: "image",
+                  media_folder: "/static/media/images",
+                  public_folder: "/media/images",
+                }
+              - {
+                  label: "Sanskrit Slokam",
+                  name: "sanskrit_slokam",
+                  widget: "text",
+                  required: false,
+                }
+              - {
+                  label: "Yoga Slokam",
+                  name: "yoga_slokam",
+                  widget: "text",
+                  required: false,
                 }
   - name: "Contact Us"
     label: "Contact us"
@@ -68,8 +84,18 @@ collections:
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Short Name", name: "short_name", widget: "string" }
-      - { label: "Display Order", name: "display_order", widget: "number", required: false}
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - {
+          label: "Display Order",
+          name: "display_order",
+          widget: "number",
+          required: false,
+        }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
       - {
           label: "Upload Image",
           name: "image_path",
@@ -77,9 +103,25 @@ collections:
           media_folder: "/static/media/images",
           public_folder: "/media/images",
         }
-      - { label: "Benefits", name: "benefits", widget: "markdown", required: false }
-      - { label: "Price Details", name: "price", widget: "string", required: false }
-      - { label: "Archive Course", name: "is_archived", widget: "boolean", default: false, required: false }
+      - {
+          label: "Benefits",
+          name: "benefits",
+          widget: "markdown",
+          required: false,
+        }
+      - {
+          label: "Price Details",
+          name: "price",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Archive Course",
+          name: "is_archived",
+          widget: "boolean",
+          default: false,
+          required: false,
+        }
   - name: "Payment"
     label: "Payment"
     files:
@@ -91,3 +133,65 @@ collections:
           - { label: "Per Class Fee", name: "perClass", widget: "number" }
           - { label: "Ten Class Fee", name: "tenClass", widget: "number" }
           - { label: "Per Month Fee", name: "perMonth", widget: "number" }
+  - name: "Yoga"
+    label: "Yoga"
+    folder: "/src/data/yoga"
+    extension: "yml"
+    format: "yml"
+    create: true
+    slug: "{{fields.title}}"
+    identifier_field: title
+    summary: "{{fields.title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Short Name", name: "short_name", widget: "string", required: false }
+      - {
+          label: "Display Order",
+          name: "display_order",
+          widget: "number",
+          required: false,
+        }
+      - {
+          label: "Duration",
+          name: "duration",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - {
+          label: "Upload Image",
+          name: "image_path",
+          widget: "image",
+          media_folder: "/static/media/images",
+          public_folder: "/media/images",
+        }
+      - {
+          label: "Benefits",
+          name: "benefits",
+          widget: "markdown",
+          required: false,
+        }
+      - {
+          label: "Video Link",
+          name: "video_link",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Archive Yoga",
+          name: "is_archived",
+          widget: "boolean",
+          default: false,
+          required: false,
+        }
+      - {
+          label: "Price Details",
+          name: "price",
+          widget: "string",
+          required: false,
+        }
