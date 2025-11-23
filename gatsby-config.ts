@@ -92,7 +92,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         policy: [{ userAgent: "*", allow: "/" }],
-        sitemap: "https://vedavid.netlify.app/sitemap.xml",
+        sitemap: "https://vedavid.netlify.app/sitemap-index.xml",
         host: "https://vedavid.netlify.app",
       },
     },
