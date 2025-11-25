@@ -46,7 +46,7 @@ const SendEmailButton = ({ onOpen, onClose, open }: SendEmailProps) => {
         {
       data && data.success && (
         <AppAlert
-          message="Email sent successfully! We will reach you shortly!"
+          message="Email sent successfully! We will reach out to you shortly!"
           severity="success"
         />
       )

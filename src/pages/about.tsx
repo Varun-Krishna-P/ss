@@ -2,6 +2,7 @@ import { HeadFC, PageProps } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
 import About from "../components/About";
+import HeadTitle from "../components/HeadTitle";
 
 
 const AboutPage: React.FC<PageProps> = () => {
@@ -14,4 +15,4 @@ const AboutPage: React.FC<PageProps> = () => {
 }
 
 export default AboutPage;
-export const Head: HeadFC = () => <title>About Us</title>
+export const Head: HeadFC = () => <HeadTitle text="About Us" />

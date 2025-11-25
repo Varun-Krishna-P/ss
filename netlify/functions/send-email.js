@@ -9,16 +9,39 @@ export async function handler(event, context) {
     });
 
     await client.send({
-      from: { email: body.app_email || "no-reply@vedavid.com", name: body.site_name || "VedaVid" },
-      to: [{ email: body.email, name: body.name }],
+      from: {
+        email: body.app_email || "no-reply@vedavid.in",
+        name: body.site_name || "VedaVid",
+      },
+      to: [{ email: body.from_email }],
       subject: body.subject || "New Request",
-      text: `
-        Name: ${body.name}
-        Phone: ${body.phone}
-        Email: ${body.email}
-        Message:
-            ${body.message}
+      html: `
+       <html>
+        <body>
+          <h2 align="center">I would like to request the details for the following:</h2>
+          <table width="600" style="border:1px solid #333">          
+            <tr>
+              <td align="center">Name</td>
+              <td align="center">${body.name}</td>
+            </tr>
+            <tr>
+              <td align="center">Email</td>
+              <td align="center">${body.email}</td>
+            </tr>
+            <tr>
+              <td align="center">Phone</td>
+              <td align="center">${body.phone}</td>
+            </tr>
+            <tr>  
+              <td align="center">Message</td>
+              <td align="center">${body.message}</td>
+            </tr>
+            </tr>
+          </table>
+          </body>
+        </html>
         `,
+      category: `${body.site_name} - Contact Form`,
     });
 
     return {
