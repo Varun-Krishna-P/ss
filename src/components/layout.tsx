@@ -30,7 +30,7 @@ const Layout = ({ children }: childrenProps) => {
               style={{ height: 40, objectFit: 'contain', borderRadius: "100%", marginRight: 10 }}
             /> {site_name}
           </Typography>
-          <Button color="inherit" component={Link} to="/catalog">Slokam</Button>
+          <Button color="inherit" component={Link} to="/sloka">Slokam</Button>
           <Button color="inherit" component={Link} to="/yoga">Yoga</Button>
         </Toolbar>
       </AppBar>

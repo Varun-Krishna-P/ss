@@ -2,3 +2,12 @@ app_config:
   site_name: Vedavid
   tagline: Where Ancient Wisdom Meets Modern Well-being.
   logo_path: /media/images/paduka.png
+  yoga_slokam: |-
+    योगश्चित्तवृत्तिनिरोधः
+    yogaś citta-vṛtti-nirodhaḥ
+    - Patanjali Samadhi Pada Verse 2
+  sanskrit_slokam: |-
+    ॐ असतो मा सद्गमय ।
+    तमसो मा ज्योतिर्गमय ।
+    मृत्योर्मा अमृतं गमय ॥
+    -- Brihadaranyaka Upanishad 1.3.28
