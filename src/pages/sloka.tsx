@@ -6,6 +6,7 @@ import { Box, Typography } from "@mui/material";
 import PageTitle from "../components/PageTitle";
 import SlokamText from "../components/SlokamText";
 import { useAppConfig } from "../hooks/useAppConfig";
+import HeadTitle from "../components/HeadTitle";
 
 const SlokaPage: React.FC<PageProps> = () => {
   const { sanskrit_slokam } = useAppConfig();
@@ -24,4 +25,4 @@ const SlokaPage: React.FC<PageProps> = () => {
   );
 };
 export default SlokaPage;
-export const Head: HeadFC = () => <title>Sloka Page</title>;
+export const Head: HeadFC = () => <HeadTitle text="Slokam" />;

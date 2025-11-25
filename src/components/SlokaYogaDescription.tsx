@@ -25,10 +25,10 @@ function SlokaYogaDescription() {
           <Typography variant="h6" component="div">🕉️ <strong>What We Offer</strong></Typography>
           <List sx={{ pl: 3 }}>
             <ListItem sx={{ display: 'list-item' }}>
-              <strong>Sloka Training:</strong> Learn the pronunciation, meaning, and spiritual essence of sacred Sanskrit slokas. Each chant opens a doorway to calmness, devotion, and deeper self-awareness.
+              <strong>Online Sloka Class:</strong> Learn the pronunciation, meaning, and spiritual essence of sacred Sanskrit slokas. Each chant opens a doorway to calmness, devotion, and deeper self-awareness.
             </ListItem>
             <ListItem sx={{ display: 'list-item' }}>
-              <strong>Yoga Sessions:</strong> Experience traditional yoga sequences that connect breath, posture, and mindfulness. Perfect for beginners and advanced practitioners alike.
+              <strong>Online Yoga Sessions:</strong> Experience traditional yoga sequences that connect breath, posture, and mindfulness. Perfect for beginners and advanced practitioners alike.
             </ListItem>
             <ListItem sx={{ display: 'list-item' }}>
               <strong>Integrated Wellness Programs:</strong> Combine sloka chanting with yoga and meditation for a holistic path to well-being — a union of sound, body, and soul.

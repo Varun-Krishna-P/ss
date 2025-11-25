@@ -6,6 +6,7 @@ import PageTitle from "../components/PageTitle";
 import { useAppConfig } from "../hooks/useAppConfig";
 import SlokamText from "../components/SlokamText";
 import YogaGrid from "../components/YogaGrid";
+import HeadTitle from "../components/HeadTitle";
 
 const YogaPage = () => {
   const { yoga_slokam} = useAppConfig();
@@ -25,4 +26,4 @@ const YogaPage = () => {
   );
 };
 export default YogaPage;
-export const Head: HeadFC = () => <title>Yoga Page</title>;
+export const Head: HeadFC = () => <HeadTitle text="Yoga" />;
