@@ -57,7 +57,7 @@ function SlokaYogaDescription() {
           <Typography variant="h6" component="div">🌼 <strong>Our Mission</strong></Typography>
           <List sx={{ pl: 3 }}>
             <ListItem sx={{ display: 'list-item' }}>
-              <em>To make the ancient teachings of yoga and sloka accessible to everyone — bridging tradition and modern life, helping each individual rediscover the stillness within and the strength beyond.</em>
+              <em>To make the ancient teachings of yoga and sloka accessible to everyone through online platform — bridging tradition and modern life, helping each individual rediscover the stillness within and the strength beyond.</em>
             </ListItem>
           </List>
         </ListItem>

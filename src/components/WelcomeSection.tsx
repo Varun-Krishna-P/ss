@@ -48,7 +48,7 @@ function WelcomeSection() {
         }}
       >
         Step into a serene space dedicated to nurturing your mind, body, and spirit through the timeless
-        practices of <strong>Chanting Sloka Online</strong> and <strong>Yoga</strong>. Here, we honor the sacred rhythms
+        practices of <strong>Learning Sloka Online</strong> and <strong>Yoga</strong>. Here, we honor the sacred rhythms
         of Sanskrit verses and the graceful flow of yoga to create harmony within and around you.
       </Typography>
     </Box>

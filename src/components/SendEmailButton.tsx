@@ -5,6 +5,7 @@ import EmailForm from "./email/EmailForm";
 import theme from "../constants/theme";
 import AppAlert from "./AppAlert";
 import AlertDataProps from "../constants/AlertProps";
+import { useContactConfig } from "../hooks/useContactConfig";
 
 type SendEmailProps = {
   onOpen: () => void;
@@ -15,6 +16,7 @@ type SendEmailProps = {
 const SendEmailButton = ({ onOpen, onClose, open }: SendEmailProps) => {
   const [data, setData] = useState<AlertDataProps | null>(null);
   const handleData = (alertData: AlertDataProps) => setData(alertData);
+  const { email } = useContactConfig();
   return (
     <>
       <Box>
@@ -54,7 +56,7 @@ const SendEmailButton = ({ onOpen, onClose, open }: SendEmailProps) => {
     {
       data && data.error && (
         <AppAlert
-          message={`Failed to send email. Please try again later. ${data.error}`}
+          message={`Failed to send email. Please try again later. ${data.error} \n If the issue persists, please contact ${email}`}
           severity="error"
         />
       )
